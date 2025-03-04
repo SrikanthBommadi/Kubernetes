@@ -1,29 +1,11 @@
-# kind: pod
-# apiVersion: V1
-# metadata:
-#   name: multiple-containers
-# # spec:
-# #   containers:
-# #   - name: nginx
-# #     image: nginx
-# #   - name: almalinux
-# #     image: almalinux:9
-# #     command: ["sleep", "1000"]
-#   spec:
-#     containers:
-#     - name: nginx
-#       image: nginx
-#     - name: almalinux
-#       image: almalinux:9
-#       command: ["sleep","1000"]
 kind: Pod
 apiVersion: v1
 metadata:
-  name: multi-containers
+  name:multiserver
 spec:
   containers:
   - name: nginx
     image: nginx
   - name: almalinux
     image: almalinux:9
-    command: ["sleep", "1000"]
+    command: ["sleep", "1000"] ##this is run for some time
