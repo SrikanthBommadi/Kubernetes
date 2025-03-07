@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: Service
+  name: nginx
 spec:
   selecter: # labels will used here for selecting the pod
     project: expense
