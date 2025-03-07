@@ -1,0 +1,26 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: Service
+spec:
+  selecter: # labels will used here for selecting the pod
+    project: expense
+    environment: dev
+    component: backend 
+  ports:
+  - protocol: TCP
+    port: 80
+    targetport: 80
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: backend
+  labels:
+    project: expense
+    environment: dev
+    component: backend
+spec:
+  containers:
+  - name: nginx
+    image: nginx
