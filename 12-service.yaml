@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: nginx
 spec:
-  selecter: # labels will used here for selecting the pod
+  selector: # labels will used here for selecting the pod
     project: expense
     environment: dev
     component: backend 
