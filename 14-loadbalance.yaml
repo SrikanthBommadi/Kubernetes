@@ -1,0 +1,30 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-loadbalance
+spec:
+  type: LoadBalancer
+  selector: # labels will used here for selecting the pod
+    project: expense
+    environment: dev
+    component: backend 
+    demo: loadbance
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodeport: 6676
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: backend-loadbalance
+  labels:
+    project: expense
+    environment: dev
+    component: backend
+    demo: loadbance
+spec:
+  containers:
+  - name: nginx
+    image: nginx

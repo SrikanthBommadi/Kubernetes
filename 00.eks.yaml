@@ -1,12 +1,12 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
-metadata:
+metadata:     ###metadata is searching the file easly using key names
   name: srikanth
   region: us-east-1
 
-managedNodeGroups:
+managedNodeGroups: ###nodes operated by Kubernetes/managednode groups operated by eks cluster
   - name: srikanth
-    instanceTypes: ["m5.large","c3.large","c5.large"]
-    desiredCapacity: 3
+    instanceTypes: ["m5.large","c3.large","c5.large"] ## instance size
+    desiredCapacity: 3 # count of instance 
     spot: True

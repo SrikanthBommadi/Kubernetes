@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+  labels:
+    app: srikanth
+    tier: net
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:     # this is to take the reference from above given labels
+    matchLabels:
+      app: srikanth
+      tier: net
+  template:   #### this is the pod refernce name from which we have to take the refernce
+    metadata:
+      labels:
+        app: srikanth
+        tier: net
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
