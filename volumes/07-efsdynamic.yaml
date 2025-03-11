@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: efs-project
+provisioner: efs.csi.aws.com
+parameters:
+  provisoningMode: efs-ap
+  filesystemId: ## we have to create the volume iddd
+  directoryPerms: "700"
+  basePath: "/project" 

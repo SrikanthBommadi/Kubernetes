@@ -1,0 +1,7 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ebs-sc
+provisioner: ebs.csi.aws.com
+reclaimPolicy: Retain ###if u dont give this it will come with default delete
+volumeBindingMode: WaitForFirstConsumer
