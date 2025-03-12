@@ -5,6 +5,6 @@ metadata:
 provisioner: efs.csi.aws.com
 parameters:
   provisoningMode: efs-ap
-  filesystemId: ## we have to create the volume iddd
+  filesystemId: fs-013d7e775f6e4dfc2 ## we have to create the volume iddd
   directoryPerms: "700"
   basePath: "/project" 
