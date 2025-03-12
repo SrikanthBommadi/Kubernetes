@@ -30,17 +30,17 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs
-# ---
-# kind: Service
-# apiVersion: v1
-# metadata:
-#   name: nginx-loadbalance
-# spec:
-#   type: LoadBalancer
-#   selector: # labels will used here for selecting the pod
-#     purpose: "ebs-demo"
-#   ports:
-#   - protocol: TCP
-#     port: 80
-#     targetPort: 80
-#     nodePort: 30007
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-load
+spec:
+  type: LoadBalancer
+  selector: # labels will used here for selecting the pod
+    purpose: "ebs-demo"
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30007
